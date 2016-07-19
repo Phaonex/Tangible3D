@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+
+{% block main %}
+<section class="wk wrapper">
+	<h2>Your Cart</h2>
+
+
+<form action="data_logic/data_request.php?<?php echo("print={$link['print']}&up_id={$_GET['id']}")?>" method="post" enctype="multipart/form-data">
+</form>
+
+<?php include("view_logic/data_view.php") ?>
+
+</section>
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}

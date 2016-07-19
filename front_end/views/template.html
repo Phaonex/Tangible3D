@@ -1,0 +1,123 @@
+{% set Tangible3d = '../Tangible3d.js' %}
+{% set controllers = {Controller: '../controllers/Controller.js', home: '../controllers/Home_f_ctrl.js', contact: '../controllers/Contact_f_ctrl.js',
+upload: '../controllers/Print_f_ctrl.js', data: '../controllers/Data_f_ctrl.js', pay: '../controllers/Pay_f_ctrl.js',
+confirm: '../controllers/confirm_f_ctrl.js'} %}
+{% set models = {Model: '../models/Model.js', home: '../models/Home_f_mdl.js', contact: '../models/Contact_f_mdl.js', upload: '../models/Print_f_mdl.js',
+data: '../models/Data_f_mdl.js', pay: '../models/Pay_f_mdl.js', confirm: '../models/Confirm_f_mdl.js'} %}
+
+{% set items = [{ title: "Starwars_Xwing.x3d", id: 1 }, { title: "starfox.x3d", id: 2}, {title: Model}] %}
+
+{% set pages = [
+    { title: "Tangible3D-home", id: 1 }, { title: "Tangible3D-contact", id: 2},{ title: "Tangible3D-upload", id: 3},
+    { title: "Tangible3D-data", id: 4},{ title: "Tangible3D-pay", id: 5},{ title: "Tangible3D-confirm", id: 6},{ title: "Tangible3D-cart", id: 7}
+] %}
+
+
+
+{% macro script(path)%}
+<script src="{{path}}"></script>
+{%endmacro%}
+
+{% macro slogan(adds)%}
+<h3 class="slogan">{{adds}}</h3>
+{%endmacro%}
+{% macro appLoader(page,idx)%}
+
+    {% if pages[idx].title %}
+        It is true the {{pages[idx].title}}
+        {{ script(controllers[pages[idx].title]) }}
+        {{ script(models[pages[idx].title]) }}
+    {% endif %}
+
+    {{ script(models.Model) }}
+    {{ script(controllers.Controller) }}
+    {{ script(Tangible3d) }}
+
+{%endmacro%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>{{view}}</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/mobile.css">
+        <link rel="icon" href="icons/favicon.png" type="image/x-icon">
+        <script src="/js/localforage.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+
+        <body>
+        {% block header %}
+            <header class="header">
+                    <div class="wrapper">
+                        <img class="logo" src="icons/tangible3d.png" alt="Logo">
+                        <h1><a href="/">Tangible 3D</a></h1>
+                        <h3 class="header-slogan">...finally you can touch it!</h3>
+                    </div>
+
+
+                    <nav class="main_nav nav">
+                        <ul>
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/upload">Print it</a></li>
+                        </ul>
+                    </nav>
+
+
+                <!-- ####### WARENKORB ########## -->
+                <div class="warenkorb">
+
+                    <label>
+                        <a href="?cart=cart.php">
+                            <p class="cart_amount"><?php ?></p>
+                            <input class="warenkorb_icon" type="button" value="small"/>
+                            <img class="warenkorb_icon" src="icons/newcart_icon.png">
+                        </a>
+                    </label>
+                </div>
+
+                <!-- ####### ENDE ########## -->
+
+
+            </header>
+        {% endblock %}
+
+        <section class="wrapper">
+                {% block main %}
+
+                {% endblock %}
+            </section>
+
+        {% block footer %}
+            <footer class="footer ">
+                <div class="wrapper">
+
+                        <img class="logo-footer" src="icons/tangible3d.png" alt="Logo">
+
+                        <p><span class="span">Tangible3D GmbH</span><br>
+                            office@tangible3d.com <br>
+                        Bahnhofstrasse 43 1010 Wien<br>
+                        tel.  01 234 96 78 fax  01 234 96 78-764</p>
+                        <p class="copyright">
+                            Copyright © 2014 Tangible3D GmbH. All rights Reserved</p>
+
+                        <div class="social">
+                            <a class="facebook" href="http://facebook.com" target="_blank"></a>
+                            <a class="twitter" href="http://twitter.com" target="_blank"></a>
+                            <a class="instagram" href="http://instagram.com" target="_blank"></a>
+                            <a class="google" href="http://google.com" target="_blank"></a>
+
+                        </div>
+                </div>
+
+
+            </footer>
+        {% endblock %}
+        </body>
+</html>

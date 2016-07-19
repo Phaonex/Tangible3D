@@ -1,0 +1,75 @@
+{% extends "template.html" %}
+
+{% block main %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{% set view = pages[5].title %}
+{{slogan('Confirm to get your 3D printed Model!')}}
+
+{% include "print_nave.html" %}
+
+<section class="wrapper contents-pay">
+
+    <section class="confirm wrapper">
+        <h2>Review to Confirm!</h2>
+
+                <h4>To print model 3D with options</h4>
+                <ul>
+                    {% for item in items %}
+                    <li>{{ item.title }}</li>
+                    {% else %}
+                    <li>This would display if the 'item' collection were empty</li>
+                    {% endfor %}
+                </ul>
+
+                <h4>Your Information's</h4>
+                <ul>
+                    {% for item in items %}
+                    <li>{{ item.title }}</li>
+                    {% else %}
+                    <li>This would display if the 'item' collection were empty</li>
+                    {% endfor %}
+                </ul>
+
+                <h4>Your payment method</h4>
+                <ul>
+                    {% for item in items %}
+                    <li>{{ item.title }}</li>
+                    {% else %}
+                    <li>This would display if the 'item' collection were empty</li>
+                    {% endfor %}
+                </ul>
+
+                <h4 class="total-payment">Total Payment</h4>
+                <p class="Rev_total_price"> 221€ </p>
+             <form>
+                <input type="submit" id="confirm" name="ship" value="confirm"/>
+            </form>
+
+    </section>
+    {{appLoader('confirm',5)}}
+</section>
+
+<script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideToggle("slow");
+        });
+    });
+
+    $(document).ready(function(){
+        $(".next").click(function(){
+            $(".next-panel").slideToggle("slow");
+        });
+    });
+
+    $(document).ready(function(){
+        $(".next1").click(function(){
+            $(".next-panel1").slideToggle("slow");
+        });
+    });
+</script>
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}

@@ -1,0 +1,201 @@
+{% extends "template.html" %}
+
+{% block main %}
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+{% set view = pages[4].title %}
+{{slogan('We accept many form of payments!')}}
+{% include "print_nave.html" %}
+
+<section class="pay-form">
+    <form class="wrapper" action="/api/pay/create/type/card_holder/card_numer/expire/iban/bic/user_data" method="post" class="clearfix"?>
+
+        <h2>Select your Payment Option</h2>
+
+        <div>
+            <label class="payopt-logos clearfix" >
+                <input class="flip-visa" type="radio" name="select_card" checked="checked" value="Visa_card" />
+                <img class="visa-logo" src="icons/visaLogo.png">
+            </label>
+
+            <label class="payopt-logos clearfix">
+                <input class="flip-master" type="radio" name="select_card" value="Master_card" />
+                <img class="master-logo" src="icons/mastercard.jpg">
+            </label>
+
+            <label class="payopt-logos clearfix">
+                <input class="flip-bank" type="radio" name="select_card" value="Electro_cash" />
+                <img class="bank-logo" src="icons/electrocash1.png">
+            </label>
+
+            <label class="payopt-logos clearfix">
+                <input class="flip" type="radio" name="select_card" value="dhl" />
+                <img class="dhl" src="icons/dhl.png">
+            </label>
+
+        </div>
+
+
+        <div class="panel panel-visa" style="opacity: 1; display: block;">
+            <input class=" panel-visa creditcard1" type="text" name="card_holder_Visa_card"  placeholder="Name of Cardholder" style="opacity: 1; display: inline;">
+            <input class=" panel-visa creditcard" type="text" name="card_number_Visa_card"  placeholder="Cardnumber" style="opacity: 1; display: inline;">
+
+            <select class="credit-month" name="card_month_Visa_card">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+                <option value=11>11</option>
+                <option value=12>12</option>
+            </select>
+
+            <select class="credit-month" name="card_year_Visa_card">
+                <option value=2014>2014</option>
+                <option value=2015>2015</option>
+                <option value=2016>2016</option>
+                <option value=2017>2017</option>
+                <option value=2018>2018</option>
+                <option value=2019>2019</option>
+                <option value=2020>2020</option>
+                <option value=2021>2021</option>
+                <option value=2022>2022</option>
+                <option value=2023>2023</option>
+                <option value=2024>2024</option>
+                <option value=2025>2025</option>
+            </select>
+        </div>
+
+
+
+        <div class="panel panel-master">
+            <input class="panel-master mastercard1" type="text" name="card_holder_Master_card" placeholder="Name of Cardholder">
+            <input class="panel-master mastercard2" type="text" name="card_number_Master_card" placeholder="Cardnumber">
+
+            <select class="credit-month" name="card_month_Master_card">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+                <option value=11>11</option>
+                <option value=12>12</option>
+            </select>
+
+            <select class="credit-month" name="card_year_Master_card">
+                <option value=2014>2014</option>
+                <option value=2015>2015</option>
+                <option value=2016>2016</option>
+                <option value=2017>2017</option>
+                <option value=2018>2018</option>
+                <option value=2019>2019</option>
+                <option value=2020>2020</option>
+                <option value=2021>2021</option>
+                <option value=2022>2022</option>
+                <option value=2023>2023</option>
+                <option value=2024>2024</option>
+                <option value=2025>2025</option>
+            </select>
+        </div>
+
+        </div>
+
+        <div class="panel panel-bank clearfix">
+            <input class="bankomat" type="text" name="iban" placeholder="IBAN">
+            <input class="bankomat" type="text" name="bic" placeholder="BIC">
+            <input  type="text" name="card_holder_Electro_cash" placeholder="Name of Cardholder">
+
+            <select class="credit-month" name="card_month_Electro_cash">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+                <option value=11>11</option>
+                <option value=12>12</option>
+            </select>
+
+            <select class="credit-month" name="card_year_Electro_cash">
+                <option value=2014>2014</option>
+                <option value=2015>2015</option>
+                <option value=2016>2016</option>
+                <option value=2017>2017</option>
+                <option value=2018>2018</option>
+                <option value=2019>2019</option>
+                <option value=2020>2020</option>
+                <option value=2021>2021</option>
+                <option value=2022>2022</option>
+                <option value=2023>2023</option>
+                <option value=2024>2024</option>
+                <option value=2025>2025</option>
+            </select>
+
+        </div>
+
+        <p class="panel panel-dhl dhl-info">We send your Product to your entered adress! <br> Payment on delivery! </p>
+
+
+
+
+        <input  class="button" type="submit" value="pay">
+    </form>
+    {{appLoader('pay',4)}}
+</section>
+
+<script>
+
+
+    $(document).ready(function(){
+
+        $(".flip").click(function(){
+            $('.panel').slideUp('slow');
+            $(".panel-dhl").fadeTo("slow",1);
+        });
+
+
+        $(".flip-visa").click(function(){
+            $('.panel').slideUp('slow');
+            $(".panel-visa").fadeTo("slow",1);
+            // $(".panel-visa").closeUp("slow");
+
+        });
+
+
+
+        $(".flip-master").click(function(){
+            $('.panel').slideUp('slow');
+            $(".panel-master").fadeTo("slow",1);
+        });
+
+
+
+        $(".flip-bank").click(function(){
+            $('.panel').slideUp('slow');
+
+            $(".panel-bank").fadeTo("slow",1);
+
+
+        });
+
+
+    });
+</script>
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}

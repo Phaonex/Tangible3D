@@ -1,0 +1,338 @@
+{% extends "template.html" %}
+
+{% block main %}
+{% include "print_nave.html" %}
+<form action="/api/print/create/user/:file/:amount/:color/:quality/:shipping'">" method="post" enctype="multipart/form-data">
+
+    <section class="extras amount wrapper">
+
+        <h2>Amount</h2>
+
+
+
+        <ul id="amount">
+            <li class="quantity">
+
+                <input class="input3" id="amount_1" checked="checked" type="radio" name="quant"  value="1"/>
+                <label for="amount_1"><span></span><p>1</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input3" id="amount_2"  type="radio" name="quant" value="2" />
+                <label for="amount_2"><span></span><p>2</p></label>
+
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input3"  id="amount_3" type="radio" name="quant" value="3" />
+                <label for="amount_3"><span></span><p>3</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input3" id="amount_4" type="radio" name="quant" value="4" />
+                <label for="amount_4"><span></span><p>4</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="amount_5" type="number" min="5" max="99" name="quant" value="more" placeholder="more"/>
+                <label class="hidden" for="amount_5"><span></span><p>More</p></label>
+
+            </li>
+
+
+        </ul>
+
+
+    </section>
+
+
+    <section class="extras color wrapper">
+        <h2>Color</h2>
+
+
+        <ul id="color">
+
+            <li class="quantity">
+
+                <input class="input2" id="color_r" type="radio" name="color" value="white" checked="checked" />
+                <label for="color_r"><span></span><p>white</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input2" id="color_g" type="radio" name="color" value="green" />
+                <label for="color_g"><span></span><p>green</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input2" id="color_b" type="radio" name="color" value="blue" />
+                <label for="color_b"><span></span><p>blue</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input2" id="color_w" type="radio" name="color" value="red" />
+                <label for="color_w"><span></span><p>red</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input2" id="color_bk" type="radio" name="color" value="black" />
+                <label for="color_bk"><span></span><p>black</p></label>
+
+            </li>
+
+
+
+        </ul>
+
+
+    </section>
+
+
+    <section class="extras quality wrapper">
+        <h2>Quality</h2>
+
+
+        <ul>
+            <li class="quantity">
+
+                <input class="input1" id="normal" type="radio" name="quality" value="Normal" checked="checked"/>
+                <label for="normal"><span></span><p>Normal</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input1" id="good" type="radio" name="quality" value="Good"  />
+                <label for="good"><span></span><p>Good</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input1" id="best" type="radio" name="quality" value="Best" />
+                <label for="best"><span></span><p>Best</p></label>
+
+            </li>
+
+
+        </ul>
+
+
+    </section>
+
+    <section class="extras shipp wrapper">
+        <h2>Shipping</h2>
+
+
+
+        <ul>
+            <li class="quantity">
+
+                <input class="input" id="sh_normal" checked="checked" type="radio" name="shipping" value="Normal" />
+                <label for="sh_normal"><span></span><p>Normal</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input class="input" id="sh_express" type="radio" name="shipping" value="Express" />
+                <label for="sh_express"><span></span><p>Express</p></label>
+
+            </li>
+
+        </ul>
+        <a id="cart" href="?<?php echo("print={$link['print']}&cart_id={$_GET['id']}")?>" name="add_cart" value="express">to Data</a>
+
+
+
+
+
+    </section>
+    <input class="more" type="submit" value="Upload more"/>
+</form>
+    <a href="?print=print_it.php">
+    </a>
+
+
+    <div class="live-info">
+        <p class="amnt"></p>
+        <p class="col"></p>
+        <p class="qual"></p>
+        <p class="ship" ></p>
+        <p >Total</p>
+
+        <!-- <p>TOTAL </p> -->
+    </div>
+
+    <div class="live-zahl">
+        <p class="amnt-price price"></p>
+        <p class="color-price price"></p>
+        <p class="qual-price price"></p>
+        <p class="ship-price price"></p>
+        <p class="total-price"></p>
+    </div>
+
+
+
+
+    </section>
+    <script>
+
+        $(document).ready(function(){
+            normalShip=8;
+            expressShip=12;
+
+            newamntprice = 0;
+            newamntpriceinput=0;
+            newcolorprice=0;
+            newqualprice=0;
+            
+            shipping = $(".input");
+            shippingValue = shipping.val();
+
+            if(shipping.attr('checked') == 'checked'){
+                $(".ship").text(shippingValue);
+                $(".ship-price").text(normalShip+" €")
+            }
+            $(".input").click(function(){
+                shippingValue= $(this).val();
+                $(".ship").text(shippingValue);
+                if (shippingValue=='Normal') {
+                    $(".ship-price").text(normalShip+" €");
+
+                }else{
+                    $(".ship-price").text(expressShip+" €");
+                }
+                calc_total_price()
+            });
+
+
+            Normal=5;
+            Good=10;
+            Best=15;
+
+
+            quality = $(".input1");
+            qualityValue = quality.val();
+
+
+            if (quality.attr('checked')=='checked') {
+                $(".qual").text(qualityValue);
+                $(".qual-price").text(Normal+" €")
+            }
+
+            $(".input1").click(function(newqualprice){
+                qualityValue= $(this).val();
+                $(".qual").text(qualityValue);
+
+                if (qualityValue=='Normal') {
+                    $(".qual-price").text(Normal+" €")
+                }else if(qualityValue=='Good'){
+                    $(".qual-price").text(Good+" €")
+                }
+                else{
+                    $(".qual-price").text(Best+" €")
+                }
+
+                newqualprice = parseInt($('.qual-price').text());
+                console.log(newqualprice);
+
+                calc_total_price()
+
+            });
+
+            white=0;
+            clStk=5;
+            color = $(".input2");
+            colorValue = color.val();
+
+            if (color.attr('checked')=='checked') {
+                $(".col").text(colorValue);
+                $(".color-price").text(white+" €");
+                newcolorprice = parseInt($('.color-price').text());
+                console.log(newcolorprice)
+
+            }
+            newcolorprice = "";
+
+            $(".input2").click(function(newcolorprice){
+                colorValue= $(this).val();
+                $(".col").text(colorValue);
+                $(".color-price").text(clStk+" €");
+
+                newcolorprice = parseInt($('.color-price').text());
+                console.log(newcolorprice);
+
+                calc_total_price();
+
+            });
+
+            proStk=15;
+            amount = $(".input3");
+            amountValue = amount.val();
+
+            if (amount.attr('checked')=='checked') {
+                $(".amnt").text(amountValue+"x");
+                $(".amnt-price").text(amountValue*proStk+" €")
+
+            }
+            
+            $(".input3").click(function(newamntprice){
+                amountValue= $(this).val();
+                $(".amnt").text(amountValue+"x");
+                $(".amnt-price").text(amountValue*proStk+" €");
+
+                newamntprice = parseInt($('.amnt-price').text());
+                console.log(newamntprice);
+
+                calc_total_price()
+
+            });
+
+            amount = $("#amount_5");
+            amountValue = amount.val();
+
+            $("#amount_5").change(function(newamntpriceinput){
+                amountValue= $(this).val();
+                $(".amnt").text(amountValue+"x");
+                $(".amnt-price").text(amountValue*proStk+" €");
+
+                newamntpriceinput = parseInt($('.amnt-price').text());
+
+                calc_total_price()
+            });
+                            calc_total_price();
+
+        });
+
+function calc_total_price() {
+    total_price = 0;
+    $(".price").each(function(index, price){
+        total_price += parseInt(price.innerHTML);
+
+    });
+
+    $(".total-price").text(total_price + " €")
+
+}
+    </script>
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "template.html" %}
+
+{% block main %}
+{% set view = pages[0].title %}
+{{slogan('Printing Solid 3D imagination!')}}
+<section class="w3-container">
+    {{view}}
+  <div class="w3-content">
+
+        <div class="w3-display-container mySlides">
+            <img src="/img/slider/first_pic.JPG" >
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                WE HAVE THE STATE OF ART 3D PRINTERS!
+
+            </div>
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="/img/slider/second_pic.jpg" >
+            <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                FEEL YOUR IMAGINATION!
+            </div>
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="/img/slider/third_pic.jpg" >
+            <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                PRINT IN ANY RESOLOUTION!
+            </div>
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <img src="/img/slider/last-pic.jpg" >
+            <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+                3D PRINTER - MODELS!
+            </div>
+        </div>
+
+      <div class="w3-display-container mySlides">
+          <img src="/img/slider/bkg_cube_printingandyou_3.jpg" >
+          <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+              WE HAVE INDUSTRIAL 3D PRINT MACHINES!
+          </div>
+      </div>
+
+      <div class="w3-display-container mySlides">
+          <img src="/img/slider/koepfe.jpg" >
+          <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+              PRINT IN MANY DIFFERENT COLORS!
+          </div>
+      </div>
+
+      <div class="w3-display-container mySlides">
+          <img src="/img/slider/slideshow.jpg" >
+          <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+              PRINT IN ANY IMAGINABLE GEOMETRY FORM!
+          </div>
+      </div>
+      <div class="w3-display-container mySlides">
+          <img src="/img/slider/suzanne-print.png" >
+          <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+              PRINT IN 3D, IN METAL!
+          </div>
+      </div>
+        <a class="w3-btn-floating w3-btn-floating-left w3-hover-dark-grey"  onclick="plusDivs(-1)">❮</a>
+        <a class="w3-btn-floating w3-btn-floating-right w3-hover-dark-grey"  onclick="plusDivs(1)">❯</a>
+
+    </div>
+
+
+    <script type="text/javascript" src="/js/slideshow.js"></script>
+    <!-- 			<div class="slide_text">...finally you can touch it!
+                </div>
+     -->
+</section>
+
+<!-- ################# -->
+<!-- content -->
+<!-- ################# -->
+<section>
+    <div class="about_news">
+        <p class="text-header">ABOUT US</p>
+        <p class="text">
+            By Tangible3D, you can realize your ideas.<br>
+            Designers, Engineers, Architects, Hobbyist,... have the chance to feel their imaginations.
+            We ourselves are Designer and Engineer.
+            Our creativity, we have always designed things in our head, then we put it on the paper and then XXXXXXXX.
+            <br>Always has something missing! That was physical interactions with our Object.
+            That is why, we have reduced this barrier and made our ideas "tangible".
+            <br>
+
+            finally you can touch it !
+        </p>
+        <div class="newsletter">
+            <p>Newsletter</p>
+            <form action="/api/home/create/activate/email" method="post" enctype="multipart/form-data">
+                <input class="nl-email" type="email" name="email" id="email" placeholder="Your Email"/>
+                <input  class="button" type="submit" value="subscribe">
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ################# -->
+<!-- upload Function -->
+<!-- ################# -->
+<section class="upload">
+    <div class="flip-container ">
+        <div class="flipper">
+            <div class="front ">
+                <a href="?print=<?php echo($link['print'])?>"><span class="eins">1. <br> Upload it!</span></a>
+            </div>
+            <div class="back up-hover">
+                <a href="?print=<?php echo($link['print'])?>"></a>
+                <span>Turn your digital model in a Physical Object! upload your 3D data and we print it for you.</span>
+                <img src="/icons/upload1.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-container ">
+        <div class="flipper">
+            <div class="front ">
+                <a href="?print=<?php echo($link['print'])?>"> <span class="zwei">2. <br> Customize it!</span></a>
+            </div>
+            <div class="back cust-hover">
+                <a href="?print=<?php echo($link['print'])?>"></a>
+                <span>Custumize it trouth differents options like color and resolution quality!</span>
+                <img src="/icons/customize1.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-container">
+        <div class="flipper">
+            <div class="front  ">
+                <a href="?print=<?php echo($link['print'])?>" class="get_it"> <span class="drei">3. <br> Get it!</span></a>
+            </div>
+            <div class="back  get-hover">
+                <a href="?print=<?php echo($link['print'])?>"></a>
+                <span>Just get your 3D Model and finally feel your Imagination.</span>
+                <img src="/icons/hack.png">
+            </div>
+        </div>
+    </div>
+
+    <!--<img class="pfeil" src="icons/pfeil.png" alt="Pfeil">           <img class="pfeil2" src="icons/pfeil.png" alt="Pfeil">-->
+</section>
+{{appLoader('home',0)}}
+
+{% endblock %}
+

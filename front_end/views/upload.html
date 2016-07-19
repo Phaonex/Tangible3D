@@ -1,0 +1,241 @@
+{% extends "template.html" %}
+
+{% block main %}
+{% set view = pages[2].title %}
+{{slogan('3D print your Model!')}}
+
+{% include "print_nave.html" %}
+
+<section class=" contents">
+    <form class="form-print" action="/api/print/create/user/:file/:amount/:color/:quality/:shipping" method="post" enctype="multipart/form-data">
+
+        <section class="uploadFile">
+            <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script>
+            <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'/>
+
+
+            <h2>upload your file</h2>
+            <x3d>
+                <scene>
+                    <inline url="/public/img/tangible3d.x3d"> </inline>
+                </scene>
+            </x3d>
+                <ul>
+
+                    <li class="fileList">
+                        <p>upload your X3D format model!</p>
+                        <label>
+                            <button name="delet"></button>
+                        </label>
+
+                        <label>
+                            <input name="btnUpData" type="file"/>
+                            <span></span>
+                        </label>
+                    </li>
+
+                    <!--{% for item in items %}
+                    <li class="fileList">
+                        <p></p>
+                        {#{ item.title }#}
+
+                        <label>
+                            <button name="delet"></button>
+                        </label>
+
+                        <label>
+                            <input name="btnUpData" type="file"/>
+                            <span></span>
+                        </label>
+                    </li>
+                    {% else %}
+                    <li>This would display if the 'item' collection were empty</li>
+                    {% endfor %}-->
+
+
+                </ul>
+
+
+        </section>
+
+    <section class="extras amount">
+
+           <h2>Amount</h2>
+
+        <div class="counts">
+            <p>2x </p>
+            <p>35 €</p>
+        </div>
+
+
+        <ul id="amount">
+            <li class="quantity">
+
+                <input id="amount_1" type="radio" name="quant" checked="checked" value="1"/>
+                <label for="amount_1"><span></span><p>1</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="amount_2" type="radio" name="quant" value="2" />
+                <label for="amount_2"><span></span><p>2</p></label>
+
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="amount_3" type="radio" name="quant" value="3" />
+                <label for="amount_3"><span></span><p>3</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="amount_4" type="radio" name="quant" value="4" />
+                <label for="amount_4"><span></span><p>4</p></label>
+
+            </li>
+
+            <li class="quantity amount_5">
+
+                <input id="amount_5" type="number" name="quant" value="more" placeholder="more"/>
+                <label class="hidden" for="amount_5"><span></span><p>More</p></label>
+
+            </li>
+
+
+        </ul>
+
+
+    </section>
+
+
+    <section class="extras color ">
+        <h2>Color</h2>
+
+        <div class="counts">
+            <p>blue </p>
+            <p>5 €</p>
+        </div>
+
+        <ul id="color">
+
+            <li class="quantity">
+
+                <input id="color_r" type="radio" name="color" value="red" />
+                <label for="color_r"><span></span><p>red</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="color_g" type="radio" name="color" value="green" />
+                <label for="color_g"><span></span><p>green</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="color_b" type="radio" name="color" value="blue" />
+                <label for="color_b"><span></span><p>blue</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="color_w" type="radio" name="color" value="white" />
+                <label for="color_w"><span></span><p>white</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="color_bk" type="radio" name="color" value="black" />
+                <label for="color_bk"><span></span><p>black</p></label>
+
+            </li>
+
+
+
+        </ul>
+
+
+    </section>
+
+
+    <section class="extras quality">
+        <h2>Quality</h2>
+
+        <div class="counts">
+            <p>good </p>
+            <p>25 €</p>
+        </div>
+
+        <ul>
+            <li class="quantity">
+
+                <input id="normal" type="radio" name="quality" value="normal" />
+                <label for="normal"><span></span><p>Normal</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="good" type="radio" name="quality" value="good" />
+                <label for="good"><span></span><p>Good</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="best" type="radio" name="quality" value="best" />
+                <label for="best"><span></span><p>Best</p></label>
+
+            </li>
+
+
+        </ul>
+
+
+    </section>
+
+    <section class="extras shipp">
+        <h2>Shipping</h2>
+
+        <div class="counts">
+            <p >Normal</p>
+            <p >5 € </p>
+            <p >70 €</p>
+        </div>
+
+        <ul>
+            <li class="quantity">
+
+                <input id="sh_normal" type="radio" name="shipping" value="sh_normal" />
+                <label for="sh_normal"><span></span><p>Normal</p></label>
+
+            </li>
+
+            <li class="quantity">
+
+                <input id="sh_express" type="radio" name="shipping" value="sh_express" />
+                <label for="sh_express"><span></span><p>Express</p></label>
+
+            </li>
+
+        </ul>
+
+    </section>
+
+        <button type="submit" id="cart" name="ship" value="send">Add to cart</button>
+
+    </form>
+</section>
+{{appLoader('print',2)}}
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}

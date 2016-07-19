@@ -1,0 +1,1033 @@
+@media screen and (min-width: 320px) and (max-width: 380px){
+    body{
+        /*background-color: blue;*/
+    }
+    .wrapper {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    header h1{
+        font-size: 16pt;
+    }
+    h3.header-slogan{
+        margin-top: -8%;
+        font-size: 12pt;
+        position: absolute;
+        left: 130px;
+    }
+
+    .slogan{
+        font-size: 38px;
+        width: 82%;
+    }
+    .main_nav ul {
+        width: 80%;
+        text-align: center;
+
+    }
+    .main_nav a {
+
+        padding: 20px 5px;
+    }
+ .w3-content{
+     margin-left:0;
+    margin-right:0;
+ }
+    .mySlides img{
+        height: 150px;
+    }
+
+    .text{
+        font-size: 12pt;
+        width: 100%;
+        padding: 0;
+        overflow-y: scroll;
+
+    }
+
+    .text-header{
+        width: auto;
+   }
+
+   .newsletter{
+       margin-top: 0px;
+       margin-bottom: 5%;
+       width: 100%;
+   }
+
+   .nl-email {
+       width: 156px;
+   }
+
+   .upload {
+      flex-direction: column;
+       align-items: center;
+   }
+
+   .upload a {
+       width: inherit ;
+       height: inherit ;
+       left: 0px ;
+       font-size: 18pt ;
+       line-height: 50px ;
+       text-align: center ;
+   }
+
+
+
+   .eins, .zwei, .drei {
+       left: 0px ;
+       text-align: center ;
+   }
+
+   .flip-container{
+       width: 175px ;
+       height: 175px ;
+       margin-bottom: 5px;
+
+   }
+
+
+
+   .front{
+       width: inherit;
+       height: inherit;
+   }
+    .front > a span {
+
+        top: 35px ;
+        width: inherit;
+        height: inherit;
+    }
+
+   .back{
+       width: inherit;
+       height: inherit;
+   }
+
+   .back img{
+       position: absolute;
+       top: 0px;
+       width: 35%;
+       height: auto;
+       left: 55px;
+   }
+
+   .up-hover img{
+       top: 0px;
+       width: 35%;
+       left: 32%;
+   }
+
+   .cust-hover img{
+
+       width: 50%;
+       left: 27%;
+   }
+
+   .get-hover img{
+       top: -100px;
+       width: 150%;
+       left: -20%;
+   }
+
+   .back span {
+       left: -12px;
+       font-size: 14px;
+       width: 157px;
+   }
+
+   .logo-footer{
+       margin-right: 42%;
+       margin-left: 42%
+
+   }
+
+   .footer{
+       height: auto;
+       background-color:  #002b46;
+       position: relative;
+       bottom: 0;
+       margin-top: 40px;
+       text-align: center;
+
+   }
+
+   .footer p{
+       font-size: 12pt;
+       /*! margin-left: 1%; */
+       /*! margin-right: 1%; */
+       float: none;
+       position: relative;
+       left: 25px;
+   }
+   .footer > div{
+       flex-wrap: wrap;
+   }
+
+   .footer .copyright{
+       left: 25% ;
+       position: static;
+   }
+
+   .footer .social{
+       margin-top: 5%;
+       margin-bottom: 5%;
+       margin-left: 27%;
+       float: none;
+   }
+   .info {
+       width: 100%;
+       float: left;
+   }
+   .info .head{
+       font-size: 24pt;
+   }
+
+   .info p{
+       font-size: 16pt;
+   }
+
+   iframe{
+       width: 100%;
+       height:300px;
+   }
+
+   .form-contact {
+       width: 100%;
+       top: 20px;
+   }
+    .form-contact input, textarea{
+        float: left;
+        width: 93%;
+    }
+
+
+   .data-way {
+       margin-top: 20px;
+       margin-bottom: 20px;
+       /*! display: inherit; */
+       flex-wrap: wrap;
+   }
+
+   .data-buy{
+       /*! margin-right: 15%; */
+       /*! margin-left: 15%; */
+   }
+
+   .contents{
+       height: auto;
+       /*! margin-top: 250%; */
+       margin-bottom: 40px;
+
+   }
+
+   .uploadFile {
+       padding-bottom: 10px;
+       position: relative;
+   }
+
+   .uploadFile h2{
+
+       text-indent: 35px;
+       line-height: 95px;
+
+   }
+    .counts{
+        display: flex;
+    }
+   .counts p{
+       margin: 0;
+   }
+
+    .extras ul{
+        height: 200px;
+    }
+
+   .uploadFile li {
+
+       text-indent: 10px;
+       padding-top: 9px;
+       width: 80%;
+
+   }
+
+
+   .uploadFile label {
+
+
+       /*! right: -61px; */
+   }
+   .counts{
+
+       right: 0%;
+       /*top: -12%*/;
+
+   }
+
+    .shipp p:nth-of-type(3n) {
+        top: 300px;
+        left: 156px;
+    }
+   .extras{
+       width: 100%;
+       /*! height: 330px; */
+   }
+   .extras li{
+
+       margin-left: 1%;
+       margin-right: 1%;
+   }
+
+   .extras label p {
+       width: 70px;
+       height: 70px;
+   }
+
+   .extras input:checked + label::before {
+       width: 98%;
+       max-width: 238px;
+   }
+
+   .amount input:checked + label::before {
+       width: 98%;
+       max-width: 68px;
+   }
+
+   .color input:checked + label::before {
+       width: 98%;
+       max-width: 68px;
+   }
+
+   .amount li {
+       width: 70px;
+   }
+
+   .amount label {
+       width: inherit;
+   }
+
+   .amount label  p{
+       width: inherit;
+   }
+
+   .color li {
+       width: 70px;
+   }
+
+   .color label {
+       width: inherit;
+   }
+
+   .color label  p{
+       width: inherit;
+   }
+
+   .quality li {
+       width: 150px;
+       margin-bottom: 40px;
+   }
+
+   .quality label {
+       width: inherit;
+   }
+   .quality ::before {
+       width: inherit;
+   }
+
+   .quality label  p{
+       width: inherit;
+   }
+
+   .shipp li {
+       width: 240px;
+
+       margin-left: 12%;
+       margin-right: 12%;
+       margin-bottom: 40px;
+   }
+
+   .shipp label {
+       width: inherit;
+
+   }
+
+   .shipp label p  {
+       width: inherit;
+
+   }
+
+   #cart{
+       top: 62px;
+       width: 100%;
+       float: left;
+   }
+
+    .data-form .hl {
+        text-align: center;
+        text-indent:0;
+    }
+
+    .data-form .data-city{
+        width: auto;
+        margin-right: 0%;
+    }
+
+    .data-form input{
+        width: auto;
+    }
+
+    .data-form .data-zip{
+        width: auto;
+        align-self: auto;
+        position: relative;
+        order: 0;
+        right: 0%;
+        top: 0;
+    }
+
+    .pay-form h2 {
+
+        text-indent: 0px;
+        line-height: normal;
+
+    }
+
+    .visa-logo {
+        margin-left: 0px;
+    }
+
+    label input + img {
+        width: 60px;
+        height: 40px;
+        margin-left:4%;
+        margin-right:4%;
+    }
+
+    .pay-form .panel input{
+        width: 95%;
+        margin-bottom: 10%;
+        margin-top: 10%;
+        margin-left:0;
+    }
+
+    .dhl-info {
+        margin: 5% 0 5% 0 ;
+        width: auto;
+        height: 100px;
+    }
+
+    .pay-form .button {
+        left:0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .confirm h2 {
+        text-indent: 0;
+        line-height: normal;
+    }
+
+    .confirm li{
+        width: 100%;
+    }
+
+    #confirm,.contents-pay #confirm:hover{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 381px) and (max-width: 799px) {
+   body{
+       background-color: #f0f0f9;
+
+    }
+
+    h1{
+        font-size: 20pt;
+    }
+    h3.header-slogan{
+        font-size: 14pt;
+        width:55%;
+    }
+
+    .slogan{
+        font-size: 42px;
+    }
+
+    .main_nav ul {
+
+        width: 90%;
+        text-align: center;
+
+    }
+
+    .main_nav a{
+        padding: 20px 15px;
+    }
+
+    .w3-content {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .mySlides img{
+        height: 350px;
+        min-height: 300px;
+        max-height: 450px;
+    }
+   
+
+    .text{
+        font-size: 14pt;
+        width: 100%;
+        padding: 0;
+    }
+    .newsletter{
+        height: 70px;
+        float: none;
+        margin-top: 0;
+        display: flex;
+        margin-bottom: 5%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nl-email {
+        width: 55%;
+        height: 55px;
+        float: none;
+    }
+
+    .newsletter p{
+        margin: 2% 2%;
+        font-size: 18pt;
+    }
+    .newsletter input:last-of-type{
+        float: none;
+        border: 0;
+        width: 30%;
+    }
+
+    .upload {
+        display: flex;
+        justify-content: center;
+
+        flex-flow: inherit;
+    }
+
+    .upload a {
+        width: inherit;
+        height: auto;
+        left: 0px ;
+        font-size: 10pt ;
+        line-height: 20px ;
+        text-align: center ;
+    }
+
+
+
+    .flip-container{
+        width: 110px;
+        height: 110px;
+        margin-right: auto;
+        margin-bottom: 5%;
+        margin-left: auto;
+
+    }
+    
+     .flip-upload{
+        width: 138px;
+        height: 138px;
+        margin-right: auto;
+        margin-bottom: 10px;
+        margin-left: auto;
+
+    }
+    
+    .flipper{
+        width: inherit;
+        height: inherit;
+    }
+    
+       .flip-upload .flipper > .front > a span {
+        top: 15px;
+        font-size: 8pt;
+       
+}
+    
+    .front > a span {
+
+        top: 35px ;
+    }
+
+    .eins, .zwei, .drei {
+        left: 0px ;
+        text-align: center ;
+    }
+
+    .front{
+        width: inherit;
+        height: inherit ;
+    }
+
+
+    .back{
+        width: inherit ;
+        height: inherit ;
+    }
+    .back span {
+        font-size: 6pt;
+        width: inherit;
+        height: 30%;
+
+    }
+
+    .back img{
+        position: absolute;
+        top: 0px;
+        width: 35%;
+        height: auto;
+        left: 55px;
+    }
+
+    .up-hover img{
+        top: 0px;
+        width: 35%;
+        left: 32%;
+    }
+
+    .cust-hover img{
+
+        width: 50%;
+        left: 27%;
+    }
+
+    .get-hover img{
+        top: -55px;
+        width: 150%;
+        left: -20%;
+    }
+
+
+    .logo-footer{
+        margin-right: 5%;
+        float: left;
+    }
+
+
+    .footer{
+        width: 100%;
+        /*height: 200px;*/
+        background-color:  #002b46;
+        position: relative;
+        bottom: 0;
+        margin-top: 40px;
+
+    }
+
+    .footer > div{
+        width: 90%;
+    }
+    .footer div p:nth-child(2) {
+
+        /*! position: relative; */
+        left: 12%;
+    }
+
+    .footer > div p:nth-child(3), p:nth-child(4){
+
+        
+        /*! margin-left: 5%; */
+        /*! margin-right: 5%; */
+        /*! position: relative; */
+        left:12%;
+        top:-40px;
+    }
+
+    .footer p{
+        font-size: 12pt;
+
+    }
+
+    .footer .copyright{
+        left: 25% ;
+        /*! position: absolute; */
+    }
+
+    .footer .social{
+        /*! margin-top: 5%; */
+        /*! margin-bottom: 5%; */
+    }
+    .info {
+        float: left;
+    }
+
+    .info p{
+        font-size: 20pt;
+    }
+
+    .form-contact {
+        width: 75%;
+
+    }
+    .data-way{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        flex-flow: wrap;
+    }
+
+    .data-buy{
+        /*margin-right: 1%;
+        margin-left: 1%;
+        margin-top: 1%;
+        margin-bottom: 10px;*/
+    }
+
+    .contents{
+        /*! height: 1349px; */
+       
+
+    }
+
+    .uploadFile {
+        padding-bottom: 10px;
+    }
+
+    .uploadFile h2{
+
+        text-indent: 72px;
+        line-height: 95px;
+
+    }
+
+    .uploadFile li {
+
+
+       
+
+
+
+    }
+
+    .uploadFile label {
+        right: 0px;
+    }
+
+    .uploadFile label {
+        right: 0px;
+    }
+
+    .counts{
+
+        /*! right: -29%; */
+
+        display: flex;
+    }
+    
+    .shipp p:nth-of-type(3n) {
+    
+       top: 224px;
+    }
+
+    .extras {
+
+        width: 100%;
+        /*! height: 15%; */
+    }
+    
+    .extras ul{
+        height: 240px;
+    }
+
+    .extras li{
+
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 3%;
+    }
+
+    .extras label p {
+        width: 70px;
+        height: 70px;
+    }
+
+    .extras input:checked + label::before {
+        width: 98%;
+        max-width: 193px;
+    }
+
+    .amount input:checked + label::before {
+        width: 98%;
+        max-width: 68px;
+    }
+
+    .color input:checked + label::before {
+        width: 98%;
+        max-width: 68px;
+    }
+
+    .amount li {
+        width: 70px;
+        margin-bottom: -7%;
+    }
+
+    .amount label {
+        width: inherit;
+    }
+
+    .amount label  p{
+        width: inherit;
+    }
+
+    .color li {
+        width: 70px;
+        margin-bottom: -7%;
+    }
+
+    .color label {
+        width: inherit;
+    }
+
+    .color label  p{
+        width: inherit;
+    }
+
+    .quality li {
+        width: 130px;
+        
+    }
+
+    .quality label {
+        width: inherit;
+    }
+    .quality ::before {
+        width: inherit;
+    }
+
+    .quality label  p{
+        width: inherit;
+    }
+
+    .shipp li {
+        width: 195px;
+
+    }
+
+    .shipp label {
+        width: inherit;
+
+    }
+
+    .shipp label p  {
+        width: inherit;
+
+
+
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1444px){
+    body{
+        /*background-color: green;*/
+    }
+
+    .wrapper{
+        padding-right: 15%;
+        padding-left: 15%;
+    }
+
+    h3.header-slogan {
+        font-size: 18pt;
+    }
+
+    .slogan{
+        font-size: 42px;
+    }
+
+    .main_nav ul {
+
+        width: 95%;
+        text-align: center;
+
+    }
+
+    .main_nav a{
+        padding: 20px 30px;
+    }
+
+    .mySlides img {
+        height: 350px;
+    }
+    
+   
+    .newsletter{
+        margin-top: -275px;
+    }
+
+    .nl-email {
+        width: 182px;
+    }
+
+    .front > a span {
+
+        top: 75px;
+        font-size: 25pt;
+        line-height: 50px;
+    }
+
+    .eins, .zwei, .drei {
+        left: 0px ;
+        text-align: center ;
+    }
+
+   .flip-upload {
+    width: 138px;
+    height: 138px;
+}
+
+    .flipper{
+        width: inherit;
+        height: inherit;
+    }
+
+    .upload a {
+        width: inherit;
+        height: inherit;
+    }
+
+    .front{
+        width: inherit;
+        height: inherit;
+    }
+    
+   .flip-upload .flipper > .front > a span {
+        top: 20px;
+        font-size: 14pt;
+        line-height: 50px;
+}
+  
+    .back{
+        width: inherit ;
+        height: inherit;
+    }
+
+    .back img{
+        position: absolute;
+        top: 0px;
+        width: 35%;
+        height: auto;
+        left: 55px;
+    }
+
+    .up-hover img{
+        top: 0px;
+        width: 35%;
+        left: 32%;
+    }
+
+    .cust-hover img{
+
+        width: 50%;
+        left: 27%;
+    }
+
+    .get-hover img{
+        top: -100px;
+        width: 150%;
+        left: -20%;
+    }
+
+
+    .footer .copyright {
+        left: 30%;
+    }
+
+    .info {
+        width: 50%;
+        float: left;
+    }
+    .info p{
+        font-size: 20pt;
+    }
+
+    .form-contact {
+        width: 80%;
+        top: -37px;
+    }
+
+    .contents{
+
+
+    }
+
+    .uploadFile {
+        padding-bottom: 10px;
+    }
+
+    .uploadFile h2{
+
+        text-indent: 72px;
+        line-height: 95px;
+
+    }
+
+    .uploadFile li {
+
+
+        text-indent: 72px;
+        padding-top: 9px;
+        
+
+
+    }
+
+    .uploadFile label {
+        right: 0px;
+    }
+
+    .counts{
+
+          float: right;
+    }
+
+    .extras li{
+
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .quality li {
+        width: 140px;
+    }
+
+    .shipp li {
+        width: 280px;
+    }
+
+    .quality label {
+        width: inherit;
+    }
+
+    .shipp label {
+        width: inherit;
+    }
+
+    .quality label p {
+        width: inherit;
+        text-align: center;
+    }
+
+    .shipp label p {
+        width: inherit;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    .quality input:checked +  label::before{
+        width: 138px;
+    }
+    .shipp input:checked +  label::before{
+        width: 278px;
+    }
+}

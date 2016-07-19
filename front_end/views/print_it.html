@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+
+{% block main %}
+
+<section class="wrapper contents">
+    <section class="uploadFile wrapper">
+        <h2>upload your file </h2>
+
+        <ul><?php
+
+            include("view_logic/data_view.php");
+
+            ?>
+
+        </ul>
+
+    </section>
+<?php
+if(isset($_GET['cust'])){
+    include("contents/print_opt.php");
+}
+?>
+
+</section>
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}

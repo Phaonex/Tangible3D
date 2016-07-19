@@ -1,0 +1,20 @@
+{
+  "name": "openshift-cartridge-nodejs-template",
+  "version": "1.0.1",
+  "description": "Custom Node.js cartridge for OpenShift - sample application",
+  "dependencies": {
+    "express": "~4.0.0",
+    "mongodb": "^2.2.2",
+    "nunjucks": "^2.4.2",
+    "strict-mode": "^0.5.0"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "private": true,
+  "main": "start.js",
+  "scripts": {
+    "start": "node --use_strict start.js"
+  },
+  "author": "kabuqueci souza alves <phaonex@icloud.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,90 @@
+{% extends "template.html" %}
+
+{% block main %}
+
+{{slogan('Where can we send your 3D model?')}}
+
+{% include "print_nave.html" %}
+
+<section class=" data-form">
+
+    <form class="wrapper" action="/api/data/create/name/last_name/email/phone/street/city/zip/state" method="post" name="Formular" onsubmit="return chkFormular()"?>
+
+        <h2 class="hl">Insert your Data</h2>
+        <h2>Contact</h2>
+
+        <input type="text" placeholder="Name" name="name" />
+
+        <input type="text" placeholder="Last Name" name="last_name" />
+
+        <input type="email" placeholder="Email" name="email"/>
+
+        <input type="tel" placeholder="Phone" name="phone"/>
+
+        <h2 class="data-adresse">Adress</h2>
+
+        <input type="text" placeholder="Street" name="street"/>
+
+        <input type="text" placeholder="City" class="data-city" name="city"/>
+        <input type="text" placeholder="Zip" class="data-zip"  name="zip"/>
+
+        <input type="text" placeholder="State"  name="state"/>
+
+        <input  class="button" type="submit" value="to pay Option">
+
+    </form>
+
+    {{appLoader('data',3)}}
+</section>
+
+<script>
+
+function chkFormular () {
+  if (document.Formular.name.value == "") {
+    alert("Please insert your Name!");
+    document.Formular.name.focus();
+    return false;
+  }
+  if (document.Formular.last_name.value == "") {
+    alert("Please insert your Last Name!");
+    document.Formular.last_name.focus();
+    return false;
+  }
+    if (document.Formular.email.value == "") {
+    alert("Please insert your Last Name!");
+    document.Formular.email.focus();
+    return false;
+  }
+      if (document.Formular.phone.value == "") {
+    alert("Please insert your Telefon Number!");
+    document.Formular.phone.focus();
+    return false;
+  }
+        if (document.Formular.street.value == "") {
+    alert("Please insert your Street!");
+    document.Formular.street.focus();
+    return false;
+  }      
+  if (document.Formular.city.value == "") {
+    alert("Please insert your City!");
+    document.Formular.city.focus();
+    return false;
+  }
+        if (document.Formular.zip.value == "") {
+    alert("Please insert your ZIP!");
+    document.Formular.zip.focus();
+    return false;
+  }
+        if (document.Formular.state.value == "") {
+    alert("Please insert your State!");
+    document.Formular.state.focus();
+    return false;
+  }
+}
+</script>
+
+{% endblock %}
+
+{% block right %}
+This is the right side!
+{% endblock %}
